@@ -18,7 +18,7 @@ function Footer(props) {
               className='ml-4 d-inline-block'
               style={{ height: '30px', width: '30px', cursor: 'pointer' }}
               onClick={() => {
-                window.open('https://twitter.com/ashmstanley', '_blank');
+                window.open('https://twitter.com/', '_blank');
               }}
             >
               <FontAwesomeIcon
