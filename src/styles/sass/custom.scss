@@ -1,0 +1,14 @@
+$theme-colors: (
+  'primary': #4346E9,
+  'danger': #ff4136,
+  'lightGray': #d3d3d3,
+  'success': #5cb85c
+);
+
+$primary-light: #a8afbf;
+
+
+// Import Bootstrap and its default variables
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+

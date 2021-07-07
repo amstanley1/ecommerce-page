@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Layout from './container/Layout';
+import LandingPage from './pages/LandingPage';
+import Faq from './pages/Faq';
+import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 
-function App() {
+export default function App() {
+  const withLayout = (component) => {
+    return (
+      <Layout>
+        <div className='layout-content'>{component}</div>
+      </Layout>
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path='/faq'>{withLayout(<Faq />)}</Route>
+        <Route path='/about'>{withLayout(<About />)}</Route>
+        <Route path='/dashboard'>
+          <Dashboard />
+        </Route>
+        <Route path='/'>{withLayout(<LandingPage />)}</Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
-
-export default App;
